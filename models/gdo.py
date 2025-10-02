@@ -8,7 +8,7 @@ import trimesh
 from models.tet_init import tet_init
 
 class MeshTrainer:
-    def __init__(self, device='cuda:3', iter=100000, learning_rate=1e-5, voxel_grid_res=72):
+    def __init__(self, device='cuda:3', iter=100000, learning_rate=1e-5, voxel_grid_res=256):
         self.device = device
         self.iter = iter
         self.learning_rate = learning_rate
