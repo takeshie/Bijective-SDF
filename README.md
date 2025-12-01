@@ -77,11 +77,12 @@ To sample point clouds at different resolutions, update the value of preenc_npoi
 ```
 
 ## Citation
-
 If you find our code or paper useful, please consider citing
+```
 @inproceedings{noda2025learning,
   title={Learning bijective surface parameterization for inferring signed distance functions from sparse point clouds with grid deformation},
   author={Noda, Takeshi and Chen, Chao and Zhou, Junsheng and Zhang, Weiqi and Liu, Yu-Shen and Han, Zhizhong},
   booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference},
   pages={22139--22149},
   year={2025}}
+```
