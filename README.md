@@ -29,7 +29,7 @@ Functions from Sparse Point Clouds with Grid Deformation</h1>
   <img src="fig/main_pic.png" width="780" />
 </p>
 
-Overview of Our method. Given a sparse point cloud \( Q \), we first learn a mapping function \( \Phi \) to encode \( Q \) into a unit sphere parametric domain. We consider each point as center point and sample local patches on the parametric surface. Next, we learn the inverse mapping \( \Psi \) to predict the positions of these local patches in 3D space and integrate them to obtain \( S \). We leverage \( S \) as the supervision for the grid deformation network \( g \) and predict the signed distance field through the GDO optimization strategy. We further extract dense point cloud $\bar{V}$ from the implicit field and optimize the parameterized surface $S$.
+Overview of Our method. Given a sparse point cloud $Q$, we first learn a mapping function $\Phi$ to encode $Q$ into a unit sphere parametric domain. We consider each point as center point and sample local patches on the parametric surface. Next, we learn the inverse mapping $\Psi$ to predict the positions of these local patches in 3D space and integrate them to obtain $S$. We leverage $S$ as the supervision for the grid deformation network $g$ and predict the signed distance field through the GDO optimization strategy. We further extract dense point cloud $\bar{V}$ from the implicit field and optimize the parameterized surface $S$.
 ## Related works
 
 Please also check out the following works that inspire us a lot:
