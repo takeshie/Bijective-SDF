@@ -60,7 +60,7 @@ Our code is implemented using Python 3.8, PyTorch 2.1.0, and CUDA 11.8. We provi
   python setup.py install
   ```
 ## Data Setup
-For convenient batch training, we read the point clouds listed in **/data_list/** from the **/data/** and save the results in **/outs/**.
+For convenient training, we read the point clouds listed in **/data_list/** from the **/data/** and save the results in **/outs/**.
 
 ## Train
 
