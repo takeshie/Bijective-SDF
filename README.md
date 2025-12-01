@@ -71,7 +71,7 @@ python run.py --gpu <gpu> --conf confs/<your config> --filelist <your filelist>
 
 ## Use Your Own Data
 
-We support both raw point clouds and mesh-sampled point clouds as inputs. Place the point cloud or mesh files in the /data directory. To sample point clouds at different scales, please modify the preenc_npoints in the configuration file.
+We support both raw point clouds and mesh-sampled point clouds as inputs. Place the point cloud or mesh files in the /data directory. To sample point clouds at different scales, please modify the preenc_npoints in the configuration.
 
 
 ## Citation
