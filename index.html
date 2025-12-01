@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="GS-Pull">
+  <meta name="keywords" content="Novel view synthesis, Neural rendering, Radiance fields, Neural networks, Quadtree">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MultiPull</title>
+
+
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+    };
+  </script>
+  <script async id="MathJax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Learning Bijective Surface Parameterization for Inferring Signed Distance Functions from Sparse Point Clouds with Grid Deformation</h1>
+          <div class="column is-full_width">
+            <h2 class="title is-4">CVPR 2025</h2>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Takehi Noda<sup>1*</sup>,</span>
+            <span class="author-block">Chao Chen<sup>1*</sup>,</span>
+            <span class="author-block">Junsheng Zhou<sup>1</sup>,</span>
+            <span class="author-block">Weiqi Zhang<sup>1</sup>,</span>
+            <span class="author-block"><a href="https://yushen-liu.github.io/">Yu-Shen Liu</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="https://h312h.github.io/">Zhizhong Han</a><sup>2</sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>School of Software, Tsinghua University, Beijing, China,</span>
+            <span class="author-block"><sup>2</sup>Department of Computer Science, Wayne State University, Detroit, USA</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2503.23670" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+              <span class="link-block">
+                <a href="https://github.com/takeshie/Bijective-SDF"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code</span>
+                </a>
+              </span>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" style="margin-top: -30px">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Inferring signed distance functions (SDFs) from sparse point clouds remains a challenge in surface reconstruction. The key lies in the lack of detailed geometric information in sparse point clouds, which is essential for learning a continuous field. To resolve this issue, we present a novel approach that learns a dynamic deformation network to predict SDFs in an end-to-end manner. To parameterize a continuous surface from sparse points, we propose a bijective surface parameterization (BSP) that learns the global shape from local patches. Specifically, we construct a bijective mapping for sparse points from the parametric domain to 3D local patches, integrating patches into the global surface. Meanwhile, we introduce grid deformation optimization (GDO) into the surface approximation to optimize the deformation of grid points and further refine the parametric surfaces. Experimental results on synthetic and real scanned datasets demonstrate that our method significantly outperforms the current state-of-the-art methods.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Method. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3" style="margin-top: -20px">Method</h2>
+        <img src="./resources/main_pic.png" class="center">
+        <div class="content has-text-justified">
+          </p>
+          <p style="margin-top: 30px">
+            <p><strong>Overview of Our method.</strong> 
+              Given a sparse point cloud \( Q \), we first learn a mapping function \( \Phi \) to encode \( Q \) into a unit sphere parametric domain. 
+              We consider each point as center point and sample local patches on the parametric surface. 
+              Next, we learn the inverse mapping \( \Psi \) to predict the positions of these local patches in 3D space and integrate them to obtain \( S \). 
+              We leverage \( S \) as the supervision for the grid deformation network \( g \) and predict the signed distance field through the GDO optimization strategy. 
+              We further extract dense point cloud \( \bar{V} \) from the implicit field and optimize the parameterized surface \( S \).
+              </p>
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Results. -->
+    <div class="columns is-centered ">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered" style="margin-top: -30px">Visualization Results</h2>
+
+        <h3 class="title is-4" style="margin-top: -20px">Comparison on ShapeNet Dataset</h3>
+        <div class="content has-text-justified">
+          <img src="./resources/shapenet.png" class="center">
+        </div>
+
+        <h3 class="title is-4">Comparison on D-FAUST Dataset</h3>
+        <div class="content has-text-justified">
+          <img src="./resources/faust.png" class="center">
+        </div>
+
+        <h3 class="title is-4">Comparison on SRB Dataset</h3>
+        <div class="content has-text-justified">
+          <img src="./resources/srb.png" class="center">
+        </div>
+        <h3 class="title is-4">Comparison on 3DScene Dataset</h3>
+        <div class="content has-text-justified">
+          <img src="./resources/3dscene.png" class="center">
+        </div>
+        <h3 class="title is-4">Comparison on KITTI Dataset</h3>
+        <div class="content has-text-justified">
+          <img src="./resources/kitti-street.png" class="center">
+        </div>
+        <div class="content has-text-justified">
+          <img src="./resources/kitti-human.png" class="center">
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+     <pre><code>@inproceedings{noda2025learning,
+      title={Learning bijective surface parameterization for inferring signed distance functions from sparse point clouds with grid deformation},
+      author={Noda, Takeshi and Chen, Chao and Zhou, Junsheng and Zhang, Weiqi and Liu, Yu-Shen and Han, Zhizhong},
+      booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference},
+      pages={22139--22149},
+      year={2025}}
+</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a 
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+              Creative Commons Attribution-ShareAlike 4.0 International License
+            </a>.
+            This webpage template is from Nerfies.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
