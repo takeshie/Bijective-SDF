@@ -26,7 +26,7 @@ Functions from Sparse Point Clouds with Grid Deformation</h1>
 ## Overview
 
 <p align="center">
-  <img src="figs/main_pic.png" width="780" />
+  <img src="fig/main_pic.png" width="780" />
 </p>
 
 Overview of Our method. Given a sparse point cloud \( Q \), we first learn a mapping function \( \Phi \) to encode \( Q \) into a unit sphere parametric domain. We consider each point as center point and sample local patches on the parametric surface. Next, we learn the inverse mapping \( \Psi \) to predict the positions of these local patches in 3D space and integrate them to obtain \( S \). We leverage \( S \) as the supervision for the grid deformation network \( g \) and predict the signed distance field through the GDO optimization strategy. We further extract dense point cloud $\bar{V}$ from the implicit field and optimize the parameterized surface $S$.
@@ -60,7 +60,7 @@ Our code is implemented using Python 3.8, PyTorch 2.1.0, and CUDA 11.8. We provi
   python setup.py install
   ```
 ## Data Setup
-For convenient batch training, we read the point clouds listed in **/data_list.txt/** from the **/data/** and save the results in **/outs/**.
+For convenient batch training, we read the point clouds listed in **/data_list/** from the **/data/** and save the results in **/outs/**.
 
 ## Train
 
@@ -70,7 +70,7 @@ python run.py --gpu <gpu> --conf confs/<your config> --filelist <your filelist>
 ```
 
 ## Use Your Own Data
-
+```
 We support both raw point clouds and mesh-sampled point clouds as inputs. Similarly, you can place the point cloud or mesh files in the **/data** directory. 
 To sample point clouds at different resolutions, update the value of preenc_npoints in the configuration file.
 
