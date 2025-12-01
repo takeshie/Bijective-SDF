@@ -35,9 +35,8 @@ Overview of Our method. Given a sparse point cloud $Q$, we first learn a mapping
 Please also check out the following works that inspire us a lot:
 
 * [Chao Chen et al. - Unsupervised Inference of Signed Distance Functions from Single Sparse Point Clouds without Learning Priors (TPAMI 2024)](https://github.com/chenchao15/NeuralTPS)
-* [Baorui Ma et al. - Neural-Pull: Learning Signed Distance Functions from Point Clouds by Learning to Pull Space onto Surfaces (ICML2021)](https://github.com/mabaorui/NeuralPull/)
 * [TianChang Shen et al. - Flexible Isosurface Extraction for Gradient-Based Mesh Optimization (SIGGRAPH 2023)](https://github.com/nv-tlabs/FlexiCubes)
-
+* [Baorui Ma et al. - Neural-Pull: Learning Signed Distance Functions from Point Clouds by Learning to Pull Space onto Surfaces (ICML2021)](https://github.com/mabaorui/NeuralPull/)
 ## Installation
 
 Our code is implemented using Python 3.8, PyTorch 2.1.0, and CUDA 11.8. We provide the complete installation instructions below.
